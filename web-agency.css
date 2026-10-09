@@ -1,0 +1,244 @@
+root {
+    --font-size: 16px;
+    --font-family: lato, sans-serif;
+    --primary: #333333;
+    --primary-light: #3ca556;
+    --primary-dark: #6d28d9;
+    --secondary: #c4b5fd;
+    --secondary-light: #e0d7ff;
+    --secondary-dark: #a78bfa;
+}
+
+*{
+
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    min-height: 100vh;
+    padding: 28px 7vw 60px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 15%, rgba(79, 237, 221, 0.35), transparent 32%),
+        linear-gradient(135deg, #0b0b0d 0%, #15101f 55%, #080808 100%);
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -180px;
+    bottom: -240px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 70px rgba(255,255,255,.025),
+        0 0 0 140px rgba(255,255,255,.02);
+    pointer-events: none;
+}
+
+nav {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-brand {
+    width: 125px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-primary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: .9rem;
+    padding: 11px 15px;
+    opacity: .82;
+    transition: opacity .2s ease, color .2s ease;
+}
+
+.nav-item a:hover {
+    opacity: 1;
+    color: #87ea45;
+}
+
+.cta-btn {
+    border-radius: 6px;
+    background: #39bc86;
+}
+
+.nav-item.cta-btn a {
+    opacity: 1;
+}
+
+.header-title {
+    max-width: 900px;
+    margin: 150px auto 10px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(2.7rem, 7vw, 6.5rem);
+    line-height: .95;
+    letter-spacing: -.04em;
+}
+
+.header-subtitle {
+    margin: 0 auto 28px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #2c8141;
+    text-transform: uppercase;
+    letter-spacing: .28em;
+    font-size: clamp(.8rem, 1.5vw, 1.1rem);
+}
+
+#button-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 110px;
+}
+
+.header-btn {
+    display: inline-block;
+    padding: 15px 26px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    border: 1px solid rgba(255,255,255,.18);
+    box-shadow: 0 12px 30px rgba(45, 169, 36, 0.3);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.header-btn:hover {
+    transform: translateY(-3px);
+    background: #2a9332;
+}
+
+.header-services {
+    list-style: none;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.service {
+    min-height: 235px;
+    padding: 28px;
+    background: rgba(255,255,255,.045);
+    backdrop-filter: blur(8px);
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    background: rgba(20, 129, 17, 0.45);
+}
+
+.service-title {
+    margin: 0 0 18px;
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.service-intro {
+    color: #b4bfb6;
+    line-height: 1.7;
+    font-size: .94rem;
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #87ea45;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 22px 5vw 45px;
+    }
+
+    nav {
+        align-items: flex-start;
+    }
+
+    .nav-primary {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .header-title {
+        margin-top: 90px;
+    }
+
+    .header-services {
+        grid-template-columns: 1fr;
+    }
+
+    #button-container {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 520px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-primary {
+        justify-content: center;
+    }
+
+    .nav-item a {
+        padding: 8px 7px;
+        font-size: .78rem;
+    }
+
+    .header-title {
+        margin-top: 70px;
+    }
+}
